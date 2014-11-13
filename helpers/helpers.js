@@ -13,6 +13,22 @@ module.exports = {
 
         return ret;
     },
+    hasStaticMethods: function(context, options) {
+    	'use strict';
+    	console.dir(options);
+        var hasStatic = false;
+        if (!context) return '';
+        for(var i=0; i < context.length; i++) {
+        	if (context[i]['static']) {
+        		hasStatic = true;
+        		break;
+        	}
+        }
+        if (hasStatic) {
+        	return options.fn(this);
+    	}
+        return '';
+    },
     search : function(classes, modules) {
         'use strict';
         var ret = '';

@@ -50,7 +50,7 @@
     </div>
 {{/if}}
 
-{{#if deprecated}}
+{{#if classDescription}}
 <div class="yuidoc-class-description">
     {{{classDescription}}}
 </div>
@@ -69,12 +69,16 @@
     <div id="methods" class="page-section">
         <h2 class="off-left">Methods</h2>
         <div class="item-list">
-        {{#methods}}
+       		{{#methods}}
+        	{{#if static}}
+            {{else}}
             {{>method}}
+            {{/if}}
         {{/methods}}
         </div>
     </div>
 {{/if}}
+
 
 {{#if properties}}
     <div id="properties" class="page-section">
@@ -109,3 +113,16 @@
         </div>
     </div>
 {{/if}}
+
+{{#hasStaticMethods methods}}
+    <div id="static-methods" class="page-section">
+        <h2 class="off-left">Static Methods</h2>
+        <div class="item-list">
+        {{#methods}}
+			{{#if static}}
+    	        {{>method}}
+            {{/if}}
+        {{/methods}}
+        </div>
+    </div>
+{{/hasStaticMethods}}
