@@ -8,7 +8,7 @@
             {{#params}}
                 <li class="arg">
                     {{#if optional}}
-                        <code class="optional">[{{name}}{{#if optdefault}}={{optdefault}}{{/if}}]</code>
+                        <code class="optional">{{name}}{{#if optdefault}}={{optdefault}}{{/if}}</code>
                     {{else}}
                         <code>{{name}}</code>
                     {{/if}}
@@ -19,13 +19,13 @@
     {{else}}
         <span class="paren">()</span>
     {{/if}}
-    </div>
-
     {{#if return}}
         <span class="returns-inline">
             <span class="type">{{#crossLink returnType}}{{/crossLink}}</span>
         </span>
     {{/if}}
+    </div>
+
 
     {{#if deprecated}}
         <span class="flag deprecated"{{#if deprecationMessage}} title="{{deprecationMessage}}"{{/if}}>deprecated</span>
