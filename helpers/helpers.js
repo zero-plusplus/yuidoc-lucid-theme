@@ -14,19 +14,33 @@ module.exports = {
         return ret;
     },
     hasStaticMethods: function(context, options) {
-    	'use strict';
-    	console.dir(options);
+        'use strict';
         var hasStatic = false;
         if (!context) return '';
         for(var i=0; i < context.length; i++) {
-        	if (context[i]['static']) {
-        		hasStatic = true;
-        		break;
-        	}
+            if (context[i]['static']) {
+                hasStatic = true;
+                break;
+            }
         }
         if (hasStatic) {
-        	return options.fn(this);
-    	}
+            return options.fn(this);
+        }
+        return '';
+    },
+    hasInstanceMethods: function(context, options) {
+        'use strict';
+        var hasInstance = false;
+        if (!context) return '';
+        for(var i=0; i < context.length; i++) {
+            if (!context[i]['static']) {
+                hasInstance = true;
+                break;
+            }
+        }
+        if (hasInstance) {
+            return options.fn(this);
+        }
         return '';
     },
     search : function(classes, modules) {
