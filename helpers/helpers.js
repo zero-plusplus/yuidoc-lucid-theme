@@ -13,6 +13,12 @@ module.exports = {
 
         return ret;
     },
+    notEmpty: function(context, options) {
+        'use strict';
+        if (!context) return '';
+        if (!String(context).replace(/\s/g, '')) return '';
+        return options.fn(this);
+    },
     hasStaticMethods: function(context, options) {
         'use strict';
         var hasStatic = false;
