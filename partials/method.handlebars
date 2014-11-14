@@ -168,16 +168,16 @@
             <h4>Returns:</h4>
 
             <div class="returns-description">
-                {{#if description}}
+                {{#notEmpty description}}
                     {{#if type}}
                         <span class="type">{{#crossLink type}}{{/crossLink}}</span>:
                     {{/if}}
                     {{{description}}}
                 {{else}}
                     {{#if type}}
-                        <span class="type">{{#crossLink type}}{{/crossLink}}</span>:
+                        <span class="type">{{#crossLink type}}{{/crossLink}}</span>
                     {{/if}}
-                {{/if}}
+                {{/notEmpty}}
             </div>
         </div>
     {{/return}}

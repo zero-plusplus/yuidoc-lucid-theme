@@ -15,8 +15,7 @@ module.exports = {
     },
     notEmpty: function(context, options) {
         'use strict';
-        if (!context) return '';
-        if (!String(context).replace(/\s/g, '')) return '';
+        if (!context || !String(context).replace(/\s/g, '')) return options.inverse(this);
         return options.fn(this);
     },
     hasStaticMethods: function(context, options) {
