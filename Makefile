@@ -8,7 +8,7 @@ else
 	sed -i.bak 's/"version": "[^"]*"/"version": "$(version)"/' package.json
 	rm *.bak
 	git add .
-	git commit -a -m "Released $(version)."
+	git commit --allow-empty -a -m "Released $(version)."
 	git tag v$(version)
 	git push origin master
 	git push origin --tags
