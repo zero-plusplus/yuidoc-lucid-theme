@@ -1,7 +1,7 @@
 {
   "name": "yuidoc-lucid-theme",
-  "version": "1.0.4",
-  "description": "A simple YUIDoc theme",
+  "version": "0.1.0",
+  "description": "A simple YUIDoc theme for single-module libraries.",
   "repository": {
     "type": "git",
     "url": "git://github.com/naturalatlas/yuidoc-lucid-theme.git"
@@ -12,7 +12,7 @@
   "author": "Brian Reavis",
   "contributors": [
     "Brian Reavis <brian@thirdroute.com>",
-    "Anthony Barone <tonybaroneee@gmail.com> (http://anthonyb.me)"
+    "Anthony Barone <tonybaroneee@gmail.com>"
   ],
   "bugs": {
     "url": "https://github.com/naturalatlas/yuidoc-lucid-theme/issues"
